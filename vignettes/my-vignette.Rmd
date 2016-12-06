@@ -1,0 +1,35 @@
+---
+title: "Vignette of reading the fars_read function"
+author: "JC"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette of reading the fars_read function}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Vignette description
+
+The 'fars_read' function returns a table of the class 'data frame' when the input is a filename from the Fatality Analysis Reporting System (FARS) of the US National Highway Traffic Safety.
+
+### Details 
+When the file name exists, the fars_read function will be applied havng the following steps.
+First, the file will be evaluated whether it is a csv file with comma as separator by the 'suppressMessages' function from the base package.
+If the file is a csv, the file will be read in using the 'read_csv' function from the readr package and assigned as 'data'.
+Then, this 'data' will be converted in a table having a 'data frame' class, using the 'tbl_df' function from the dplyr package.
+
+
+
+```{r reading_farsFile}
+fars_read <- function(filename) {
+  if(!file.exists(filename))
+    stop("file '", filename, "' does not exist")
+  data <- suppressMessages({
+    readr::read_csv(filename, progress = FALSE)
+  })
+  dplyr::tbl_df(data)
+}
+
+```
+

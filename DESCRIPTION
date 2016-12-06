@@ -1,0 +1,15 @@
+Package: farsReadTest
+Type: Package
+Title: Reading fars file
+Version: 0.1
+Date: 2016-12-06
+Author: JC
+Maintainer: JC <JC@nowhere.com>
+Description: Testing building a package with the fars_read function
+License: GLP >= 2
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
