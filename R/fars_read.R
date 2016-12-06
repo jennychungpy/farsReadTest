@@ -33,3 +33,4 @@ fars_read <- function(filename) {
   })
   dplyr::tbl_df(data)
 }
+
