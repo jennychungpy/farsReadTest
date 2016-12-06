@@ -7,7 +7,7 @@ Author: JC
 Maintainer: JC <JC@nowhere.com>
 Description: Testing building a package with the fars_read function
 License: GLP >= 2
-LazyData: FALSE
+LazyData: TRUE
 RoxygenNote: 5.0.1
 Suggests: knitr,
     rmarkdown,
