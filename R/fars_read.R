@@ -20,9 +20,7 @@
 #' @return A table of the class 'data frame'
 #'
 #' @examples
-#' fars_read("accident_2013.csv.bz2")
-#' accident_2013_df <- fars_read("accident_2013.csv.bz2")
-#' fars_read("accident_2012.csv.bz2")
+#' fars_read("extdata")
 #'
 #' @export
 fars_read <- function(filename) {
