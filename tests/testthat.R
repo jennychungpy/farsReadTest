@@ -1,10 +1,10 @@
 library(testthat)
 library(farsReadTest)
 
-source("path/to/fars_read.R")
-source("path/to/dataExample.R")
+source("R/fars_read.R")
+source("R/dataExample.R")
 
 
-test_results <- test_dir("path/to/tests", reporter="summary")
+test_results <- test_dir("tests/tests", reporter="summary")
 
 test_check("farsReadTest")
