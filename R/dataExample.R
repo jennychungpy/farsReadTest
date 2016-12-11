@@ -5,9 +5,6 @@
 #'
 #' @param path Name of file
 #' @export
-#'
-#' @examples
-#' farsReadTest_example("accident_2013.csv.bz2")
 farsReadTest_example <- function(path) {
   system.file("extdata", path, package = "farsReadTest", mustWork = FALSE)
 }
