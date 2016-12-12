@@ -5,6 +5,6 @@ library(farsReadTest)
 #source("R/dataExample.R")
 
 
-test_results <- test_dir("tests", reporter="summary")
+#test_results <- test_dir("tests", reporter="summary")
 
 test_check("farsReadTest")
