@@ -66,7 +66,7 @@ test_that("Invalid state number and valid year", {
   expect_error(fars_map_state(99, 2013))
 })
 
-test_that("Valid state number and year", {
-  output <- fars_map_state(1, 2013)
-  expect_that(output, is_a('map'))
-})
+# test_that("Valid state number and year", {
+#   output <- fars_map_state(1, 2013)
+#   expect_that(output, is_a('map'))
+# })
