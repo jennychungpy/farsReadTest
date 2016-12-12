@@ -9,8 +9,9 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-## Vignette description
+# Vignette description
 
+## The 'fars_read' function
 The 'fars_read' function returns a table of the class 'data frame' when the input is a filename from the Fatality Analysis Reporting System (FARS) of the US National Highway Traffic Safety.
 
 ### Details 
@@ -33,3 +34,21 @@ fars_read <- function(filename) {
 
 ```
 
+
+## The 'make_filename' function
+The 'make_filename' function creates a filename, having a charactor vector containing a formatted combination
+of text and the 'year' variable.
+
+### Details
+When the year is given, the year is converted into a integer by 'as.integer' from the base package, and
+assigned as 'year'. Then, the 'year' variable will be used in the C function 'sprintf' from the base package.
+
+```{r creating_farsFilename}
+make_filename <- function(year) {
+  year <- as.integer(year)
+  createdFilename <- sprintf("accident_%d.csv.bz2", year)
+  systemFilename <- system.file('extdata', createdFilename, package = 'farsReadTest')
+  systemFilename
+}
+
+```

@@ -20,7 +20,8 @@
 #' @return A table of the class 'data frame'
 #'
 #' @examples
-#' fars_read(farsReadTest_example("accident_2013.csv.bz2"))
+#' systemFilename <- system.file("extdata", "accident_2013.csv.bz2", package = "farsReadTest", mustWork = FALSE)
+#' fars_read(systemFilename)
 #'
 #' @export
 fars_read <- function(filename) {
