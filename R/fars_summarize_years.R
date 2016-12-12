@@ -20,7 +20,7 @@
 #' @return A table with a summary of all valid years in a FARS file
 #'
 #' #@example
-#' #fars_summarize_years(c(2013, 2014, 2015))
+#' #fars_summarize_years(c(2013, 2014))
 #'
 #' @export
 fars_summarize_years <- function(years) {

@@ -13,7 +13,7 @@ fars_summarize_years(years)
 A table with a summary of all valid years in a FARS file
 
 #@example
-#fars_summarize_years(c(2013, 2014, 2015))
+#fars_summarize_years(c(2013, 2014))
 }
 \description{
 The 'fars_summarize_years' function returns a table with a summary of the 'years' parameter.
