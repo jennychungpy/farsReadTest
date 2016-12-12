@@ -29,7 +29,7 @@ test_that("The year input is integer", {
 # testing the fars_read_years function
 context("fars_read_years")
 test_that("The year is not valid", {
-  expect_error(fars_read_years(2012))
+  expect_warning(fars_read_years(2012), "invalid year")
 })
 
 test_that("Valid years and returning a list", {
