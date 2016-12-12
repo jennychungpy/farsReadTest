@@ -63,10 +63,10 @@ test_that("Valid years and returning a tbl_df", {
 # testing the fars_map_state function
 context("fars_map_state")
 test_that("Invalid state number and valid year", {
-  expect_error(fars_map_state(1, 2015))
+  expect_error(fars_map_state(99, 2013))
 })
 
 test_that("Valid state number and year", {
-  output <- fars_map_state(7, 2015)
+  output <- fars_map_state(1, 2013)
   expect_that(output, is_a('map'))
 })
