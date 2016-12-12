@@ -37,10 +37,10 @@ test_that("Valid years and returning a list", {
   expect_that(output, is_a('list'))
 })
 
-# test_that("Valid years and returning a list", {
-#   output <- fars_read_years(c(2013, 2014))
-#   expect_that(output, is_a('list'))
-# })
+test_that("Valid years and returning a list", {
+  output <- fars_read_years(c(2013, 2014))
+  expect_that(output, is_a('list'))
+})
 
 
 # testing the fars_summarize_years function
