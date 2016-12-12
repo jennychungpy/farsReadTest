@@ -27,7 +27,8 @@ stop When the file name does not exist. The non-existence of the file name will 
 the sentence "file <filename> does not exist".
 }
 \examples{
-fars_read(farsReadTest_example("accident_2013.csv.bz2"))
+systemFilename <- system.file("extdata", "accident_2013.csv.bz2", package = "farsReadTest", mustWork = FALSE)
+fars_read(systemFilename)
 
 }
 
