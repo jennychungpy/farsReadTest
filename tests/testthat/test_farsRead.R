@@ -24,3 +24,16 @@ test_that("The year input is integer", {
   output <- fars_read(file)
   expect_that(output, is_a('data.frame'))
 })
+
+
+# testing the fars_read_years function
+context("fars_read_years")
+test_that("The year is not valid", {
+  expect_error(fars_read_years(2012))
+})
+
+test_that("Valid years and returning a list", {
+  output <- fars_read_years(2013)
+  expect_that(output, is_a('list'))
+})
+

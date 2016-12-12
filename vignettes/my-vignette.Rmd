@@ -52,3 +52,35 @@ make_filename <- function(year) {
 }
 
 ```
+
+
+## The 'fars_read_years' function
+The 'fars_read_years' function returns a list of each element of the 'year' variable which appears in the read-in file.
+
+### Details
+Within the 'fars_read_years' function, a 'lapply' function from the base package is used. The parameters for
+the 'lapply' function are 'years' and the 'make_filename' function (defined above).
+Within the 'lapply' function, the 'make_filename' function will be first applied on the 'year' variable and assigned
+this as 'file'. Then, the 'tryCatch' function is called and evaluates its content, containing an expression and the function(e)
+which implies an error. The expression is composed of:
+    1) the 'fars_read' function of a file as 'dat'
+    2) data manipulation of the 'dat' file: adding a new variable 'year' using the 'mutate' function of the dplyr package,
+                                             followed by selecting the variables 'MONTH' and 'year' from the 'dat' file
+When the year is valid, a list of valid years and months will be returned.
+
+```{r reading_multipleYears}
+fars_read_years <- function(years) {
+  lapply(years, function(year) {
+    file <- make_filename(year)
+    tryCatch({
+      dat <- fars_read(file)
+      dplyr::mutate(dat, year = YEAR) %>%
+        dplyr::select(MONTH, year)
+    }, error = function(e) {
+      warning("invalid year: ", year)
+      return(NULL)
+    })
+  })
+}
+
+```
