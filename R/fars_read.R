@@ -19,8 +19,8 @@
 #'
 #' @return A table of the class 'data frame'
 #'
-#' #@examples
-#' #fars_read("extdata")
+#' @examples
+#' fars_read(farsReadTest_example("accident_2013.csv.bz2"))
 #'
 #' @export
 fars_read <- function(filename) {

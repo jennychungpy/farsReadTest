@@ -11,9 +11,6 @@ fars_read(filename)
 }
 \value{
 A table of the class 'data frame'
-
-#@examples
-#fars_read("extdata")
 }
 \description{
 The 'fars_read' function returns a table of the class 'data frame' when the input is a filename from the Fatality Analysis Reporting System
@@ -28,5 +25,9 @@ Then, this 'data' will be converted in a table having a 'data frame' class, usin
 \note{
 stop When the file name does not exist. The non-existence of the file name will be reported by
 the sentence "file <filename> does not exist".
+}
+\examples{
+fars_read(farsReadTest_example("accident_2013.csv.bz2"))
+
 }
 

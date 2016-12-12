@@ -4,10 +4,10 @@
 \alias{farsReadTest_example}
 \title{Path to farsReadTest examples}
 \usage{
-farsReadTest_example(path)
+farsReadTest_example(filename)
 }
 \arguments{
-\item{path}{Name of file}
+\item{filename}{Name of file}
 }
 \description{
 Pakage 'farsReadTest' comes bundled with a number of sample files in its \code{inst/extdata}
