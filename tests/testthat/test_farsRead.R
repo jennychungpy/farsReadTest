@@ -46,7 +46,7 @@ test_that("Valid years and returning a list", {
 # testing the fars_summarize_years function
 context("fars_summarize_years")
 test_that("The year is not valid", {
-  expect_warning(fars_summarize_years(2012), "invalid year")
+  expect_error(fars_summarize_years(2012))
 })
 
 test_that("Valid years and returning a tbl_df", {
