@@ -54,7 +54,19 @@ test_that("Valid years and returning a tbl_df", {
   expect_that(output, is_a('tbl_df'))
 })
 
-# test_that("Valid years and returning a tbl_df", {
-#   output <- fars_summarize_years(c(2013, 2014))
-#   expect_that(output, is_a('tbl_df'))
-# })
+test_that("Valid years and returning a tbl_df", {
+  output <- fars_summarize_years(c(2013, 2014))
+  expect_that(output, is_a('tbl_df'))
+})
+
+
+# testing the fars_map_state function
+context("fars_map_state")
+test_that("Invalid state number and valid year", {
+  expect_error(fars_map_state(1, 2015))
+})
+
+test_that("Valid state number and year", {
+  output <- fars_map_state(7, 2015)
+  expect_that(output, is_a('map'))
+})
