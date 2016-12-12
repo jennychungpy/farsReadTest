@@ -10,8 +10,8 @@
 #'
 #' @return a filename with the format "accident_<year>.csv.bz2"
 #'
-#' #@example
-#' #make_filename(2013)
+#' @examples
+#' make_filename(2013)
 #'
 #'
 #' @export

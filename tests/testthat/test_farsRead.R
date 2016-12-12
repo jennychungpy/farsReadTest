@@ -18,11 +18,11 @@ test_that("The year input is not integer", {
   expect_error(make_filename("aaa"))
 })
 
-test_that("The year input is integer", {
-  createdFilename <- make_filename(2013)
-  year <- substr(createdFilename, regexpr('accident_', createdFilename), regexpr('\\.csv.bz2', createdFilename))
-  year <- gsub("\\.", "", year)
-  year <- gsub("accident_", "", year)
-  year <- as.integer(year)
-  expect_that(year, is_a('integer'))
-})
+# test_that("The year input is integer", {
+#   createdFilename <- make_filename(2013)
+#   year <- substr(createdFilename, regexpr('accident_', createdFilename), regexpr('\\.csv.bz2', createdFilename))
+#   year <- gsub("\\.", "", year)
+#   year <- gsub("accident_", "", year)
+#   year <- as.integer(year)
+#   expect_that(year, is_a('integer'))
+# })

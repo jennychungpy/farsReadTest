@@ -11,9 +11,6 @@ make_filename(year)
 }
 \value{
 a filename with the format "accident_<year>.csv.bz2"
-
-#@example
-#make_filename(2013)
 }
 \description{
 The 'make_filename' function creates a filename, having a charactor vector containing a formatted combination
@@ -22,5 +19,10 @@ of text and the 'year' variable.
 \details{
 When the year is given, the year is converted into a integer by 'as.integer' from the base package, and
 assigned as 'year'. Then, the 'year' variable will be used in the C function 'sprintf' from the base package.
+}
+\examples{
+make_filename(2013)
+
+
 }
 
