@@ -15,11 +15,12 @@ test_that("FARS year is existing", {
 # testing the make_file function
 context("make_filename")
 test_that("The year input is not integer", {
-  year <- "aaa"
-  expect_that(name, is_a('character'))
+  file <- make_filename("aaa")
+  expect_error(fars_read(file))
 })
 
-test_that("The year input is not integer", {
-  year <- 2013
-  expect_that(name, is_a('numeric'))
+test_that("The year input is integer", {
+  file <- make_filename(2013)
+  output <- fars_read(file)
+  expect_that(output, is_a('data.frame'))
 })
