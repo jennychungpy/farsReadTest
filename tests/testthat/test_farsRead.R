@@ -37,3 +37,24 @@ test_that("Valid years and returning a list", {
   expect_that(output, is_a('list'))
 })
 
+test_that("Valid years and returning a list", {
+  output <- fars_read_years(2013, 2014)
+  expect_that(output, is_a('list'))
+})
+
+
+# testing the fars_summarize_years function
+context("fars_summarize_years")
+test_that("The year is not valid", {
+  expect_warning(fars_summarize_years(2012), "invalid year")
+})
+
+test_that("Valid years and returning a tbl_df", {
+  output <- fars_summarize_years(2013)
+  expect_that(output, is_a('tbl_df'))
+})
+
+test_that("Valid years and returning a tbl_df", {
+  output <- fars_summarize_years(2013, 2014)
+  expect_that(output, is_a('tbl_df'))
+})

@@ -109,6 +109,21 @@ code > span.er { color: #ff0000; font-weight: bold; }
 }</code></pre>
 </div>
 </div>
+<div id="the-fars_summarize_years-function" class="section level2">
+<h2>The ‘fars_summarize_years’ function</h2>
+<p>The ‘fars_summarize_years’ function returns a table with a summary of the ‘years’ parameter.</p>
+<div id="details-3" class="section level3">
+<h3>Details</h3>
+<p>After applying the ‘fars_read_years’ function on the parameter ‘years’, a ‘dat_list’ object is made. Lists of different years will be bound by rows using the ‘bind_rows’ function of the dplyr package, followed by: 1) the ‘group_by’ function of the dplyr package, aggregating by the ‘year’ and ‘MONTH’ variables 2) after aggregation, the number of rows ‘n’ is counted using the ‘summarize’ function from the dplyr package 3) the different elements in the ‘year’ column is then spread over multiple columns using the ‘spread’ function from the dplyr package, together with the number of rows ‘n’</p>
+<pre class="sourceCode r"><code class="sourceCode r">fars_summarize_years &lt;-<span class="st"> </span>function(years) {
+  dat_list &lt;-<span class="st"> </span><span class="kw">fars_read_years</span>(years)
+  dplyr::<span class="kw">bind_rows</span>(dat_list) %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">group_by</span>(year, MONTH) %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">summarize</span>(<span class="dt">n =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">    </span>tidyr::<span class="kw">spread</span>(year, n)
+}</code></pre>
+</div>
+</div>
 </div>
 
 
